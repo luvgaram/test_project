@@ -1,17 +1,40 @@
 ﻿using System;
 
-namespace avg
+namespace ProgExWeek3
 {
-	class MainClass
+	class Student
+	{
+		public string Name;
+		public int Korean;
+		public int English;
+		public int Mathmatics;
+		public int Science;
+
+		public Student(string _Name, int _Korean, int _English, int _Mathmatics, int _Science)
+		{
+			Name = _Name;
+			Korean = _Korean;
+			English = _English;
+			Mathmatics = _Mathmatics;
+			Science = _Science;
+		
+			// 이름, 국어, 영어, 수학, 과학 점수를 
+			// 인자로 받는 생성자를 만드세요
+		}
+		public int Average()
+		{
+			// 평균을 구하세요.
+		return (Korean + English + Mathmatics + Science) / 4;
+		}
+	}
+
+	class Average
 	{
 		public static void Main (string[] args)
 		{
-			int avg1 = 100;
-			int avg2 = 200;
-			int avg3 = 300;
-			int avg4 = 400;
-			int avg = (avg1 + avg2 + avg3 + avg4) / 4;
-			Console.WriteLine ("첫번째 수: {0}, 두번째 수:{1}, 세번째 수: {2}, 네번째 수:{3}, 평균: {4}", avg1, avg2, avg3, avg4, avg);
+			Student student = new Student ("조영호", 10, 20, 30, 40);
+			// 이름과 평균을 출력하세요. 
+			Console.WriteLine ("이름: {0}, 국어: {1}, 영어: {2}, 수학: {3}, 과학: {4}, 평균: {5}", student.Name, student.Korean, student.English, student.Mathmatics, student.Science, student.Average());
 		}
 	}
 }
